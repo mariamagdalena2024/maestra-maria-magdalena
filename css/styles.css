@@ -423,7 +423,6 @@ and (-webkit-device-pixel-ratio : 3) {
 
 .free-consultation.whatsapp-link:hover {
     background-color: #128c7e;
-    transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
