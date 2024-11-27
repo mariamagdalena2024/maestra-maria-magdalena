@@ -388,37 +388,25 @@ and (-webkit-device-pixel-ratio : 3) {
     100% { transform: rotate(0); }
 }
 
-.free-consultation {
+/* Ajustes para la sección de introducción */
+.intro {
+    position: relative;
+    padding-top: 80px; /* Añade espacio en la parte superior para el botón */
+    text-align: center;
+    padding-bottom: 60px; /*mantiene el padding inferior*/
+}
+
+.intro .free-consultation.whatsapp-link {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffd700;
-    color: #333;
-    padding: 15px 25px;
-    border-radius: 50px;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px; /* Coloca el botón en la parte superior */
+    z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
 }
 
-.free-consultation:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.free-consultation .icon-tabler-bell-ringing {
-    margin-right: 10px;
-    animation: ring 4s 0.7s ease-in-out infinite;
-}
-
-.free-consultation span {
-    margin-left: 10px;
-}
-
-/* Actualización del botón de WhatsApp */
-.whatsapp-button {
+/* Estilos para el botón de consulta gratis */
+.free-consultation.whatsapp-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -426,35 +414,52 @@ and (-webkit-device-pixel-ratio : 3) {
     color: white;
     padding: 15px 25px;
     border-radius: 50px;
-    text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
+    text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.whatsapp-button:hover {
+.free-consultation.whatsapp-link:hover {
     background-color: #128c7e;
     transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.whatsapp-icon {
+.free-consultation.whatsapp-link .icon-tabler-bell-ringing {
+    margin-right: 10px;
+    animation: ring 4s 0.7s ease-in-out infinite;
+}
+
+.free-consultation.whatsapp-link span {
+    margin: 0 10px;
+}
+
+.free-consultation.whatsapp-link .whatsapp-icon {
     width: 24px;
     height: 24px;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
-    .free-consultation, .whatsapp-button {
+    .free-consultation.whatsapp-link {
         font-size: 1em;
         padding: 12px 20px;
+    }
+    
+    .free-consultation.whatsapp-link .icon-tabler-bell-ringing,
+    .free-consultation.whatsapp-link .whatsapp-icon {
+        width: 20px;
+        height: 20px;
     }
 }
 
 /* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
 @media (prefers-reduced-motion: reduce) {
-    .free-consultation .icon-tabler-bell-ringing {
+    .free-consultation.whatsapp-link .icon-tabler-bell-ringing {
         animation: none;
     }
 }
+
