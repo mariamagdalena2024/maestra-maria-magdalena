@@ -214,10 +214,10 @@ section h2 {
 }
 
 .testimonial-img {
-    width: 350px;
-    height: 400px;
-    margin: 0 auto 15px; /* Centra la imagen horizontalmente y deja un margen inferior */
     display: block;
+    margin: 0 auto; /* Centra la imagen */
+    max-width: 100%;
+    height: auto;
 }
 
 /* Botón de WhatsApp */
