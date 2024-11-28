@@ -214,22 +214,10 @@ section h2 {
 }
 
 .testimonial-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid #ffd700;
-}
-
-.testimonial p {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.testimonial h4 {
-    font-weight: bold;
-    color: #b8860b;
+    width: 350px;
+    height: 400px;
+    margin: 0 auto 15px; /* Centra la imagen horizontalmente y deja un margen inferior */
+    display: block;
 }
 
 /* Botón de WhatsApp */
