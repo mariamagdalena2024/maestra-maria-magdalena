@@ -417,17 +417,6 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .free-consultation.whatsapp-link {
-        font-size: 1em;
-        padding: 12px 20px;
-    }
-
-    .free-consultation.whatsapp-link .icon-tabler-bell-ringing,
-    .free-consultation.whatsapp-link .whatsapp-icon {
-        width: 20px;
-        height: 20px;
-    }
-
     .carousel-container {
         max-width: 90%;
     }
@@ -618,6 +607,19 @@ footer p {
     width: 24px;
     height: 24px;
     margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .free-consultation.whatsapp-link {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    
+    .free-consultation.whatsapp-link .icon-tabler-bell-ringing,
+    .free-consultation.whatsapp-link .whatsapp-icon {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
