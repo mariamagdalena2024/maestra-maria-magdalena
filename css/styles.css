@@ -24,7 +24,7 @@ header {
     color: #ffffff;
     position: relative;
     background-attachment: fixed;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 header::before {
@@ -57,6 +57,45 @@ header .subtitle {
     margin-top: 20px;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor principal del logo */
+.logo {
+    background-color: #fff8e1; 
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+    border: 2px solid #b8860b;
+    display: flex;
+    justify-content: center; /* Alineación horizontal */
+    align-items: center; /* Alineación vertical */
+    margin-bottom: 20px; /* Espaciado hacia la sección intro */
+}
+
+/* Alinear elementos dentro del logo (texto e imagen) */
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+    gap: 10px; /* Espacio entre el texto y la imagen */
+    text-align: center;
+}
+
+/* Estilo de cada parte del texto del logo */
+.logo-name {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #b8860b;
+    text-transform: uppercase;
+    line-height: 1; /* Mantiene alineación vertical con la imagen */
+}
+
+/* Estilo de la imagen del logo */
+.logo-image {
+    width: 60px; /* Tamaño de la imagen */
+    height: 60px;
+    border-radius: 50%; /* Imagen redondeada */
+    object-fit: cover; /* Mantiene proporción de la imagen */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra decorativa */
+    border: 2px solid #b8860b; /* Borde decorativo */
 }
 
 /* Mejora del estilo para la advertencia de edad con efecto de palpitación */
