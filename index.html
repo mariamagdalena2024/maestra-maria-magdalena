@@ -149,21 +149,43 @@
         <h2>Algunos testimonios</h2>
         <div class="carousel-container">
             <div class="carousel">
+                <!-- Clon del último elemento -->
+                <div class="testimonial clone">
+                    <div class="message-bubble">
+                        <img data-src="assets/testimonio-4.jpeg" alt="testimonio 4" class="lazyload testimonial-img">
+                    </div>
+                </div>
+                <!-- Elementos originales -->
                 <div class="testimonial">
-                    <img data-src="assets/testimonio-1.jpeg" alt="testimonio 1" class="lazyload testimonial-img">
+                    <div class="message-bubble">
+                        <img data-src="assets/testimonio-1.jpeg" alt="testimonio 1" class="lazyload testimonial-img">
+                    </div>
                 </div>
                 <div class="testimonial">
-                    <img data-src="assets/testimonio-2.jpeg" alt="testimonio 2" class="lazyload testimonial-img">
+                    <div class="message-bubble">
+                        <img data-src="assets/testimonio-2.jpeg" alt="testimonio 2" class="lazyload testimonial-img">
+                    </div>
                 </div>
                 <div class="testimonial">
-                    <img data-src="assets/testimonio-3.jpeg" alt="testimonio 3" class="lazyload testimonial-img">
+                    <div class="message-bubble">
+                        <img data-src="assets/testimonio-3.jpeg" alt="testimonio 3" class="lazyload testimonial-img">
+                    </div>
                 </div>
                 <div class="testimonial">
-                    <img data-src="assets/testimonio-4.jpeg" alt="testimonio 4" class="lazyload testimonial-img">
+                    <div class="message-bubble">
+                        <img data-src="assets/testimonio-4.jpeg" alt="testimonio 4" class="lazyload testimonial-img">
+                    </div>
+                </div>
+                <!-- Clon del primer elemento -->
+                <div class="testimonial clone">
+                    <div class="message-bubble">
+                        <img data-src="assets/testimonio-1.jpeg" alt="testimonio 1" class="lazyload testimonial-img">
+                    </div>
                 </div>
             </div>
-            <button class="carousel-button prev">&lt;</button>
-            <button class="carousel-button next">&gt;</button>
+            <button class="carousel-button prev" aria-label="Testimonio anterior">&lt;</button>
+            <button class="carousel-button next" aria-label="Testimonio siguiente">&gt;</button>
+            <div class="carousel-dots"></div>
         </div>
     </section>
 
@@ -202,35 +224,94 @@
         <img data-src="assets/icono-whatsapp.png" alt="WhatsApp" class="lazyload whatsapp-icon">
     </a>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Página cargada correctamente.');
+
+            // Código para el carrusel de testimonios
             const carousel = document.querySelector('.carousel');
             const prevButton = document.querySelector('.carousel-button.prev');
             const nextButton = document.querySelector('.carousel-button.next');
-            const testimonials = document.querySelectorAll('.testimonial');
-            let currentIndex = 0;
+            const testimonials = document.querySelectorAll('.testimonial:not(.clone)');
+            const totalTestimonials = testimonials.length;
+            let currentIndex = 1; // Empezamos en 1 porque el primer elemento es un clon
+            let isTransitioning = false;
+
+            function setCarouselPosition(index, animate = true) {
+                if (!animate) {
+                    carousel.style.transition = 'none';
+                }
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+                if (!animate) {
+                    carousel.offsetHeight; // Forzar un reflow
+                    carousel.style.transition = '';
+                }
+            }
 
             function showTestimonial(index) {
-                carousel.style.transform = `translateX(-${index * 100}%)`;
+                if (isTransitioning) return;
+                isTransitioning = true;
+                setCarouselPosition(index);
+                updateDots(index - 1);
             }
 
             function showNext() {
-                currentIndex = (currentIndex + 1) % testimonials.length;
+                if (currentIndex >= totalTestimonials + 1) {
+                    setCarouselPosition(1, false);
+                    currentIndex = 1;
+                }
+                currentIndex++;
                 showTestimonial(currentIndex);
             }
 
             function showPrev() {
-                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                if (currentIndex <= 0) {
+                    setCarouselPosition(totalTestimonials, false);
+                    currentIndex = totalTestimonials;
+                }
+                currentIndex--;
                 showTestimonial(currentIndex);
             }
 
-            nextButton.addEventListener('click', showNext);
-            prevButton.addEventListener('click', showPrev);
+            if (prevButton && nextButton) {
+                nextButton.addEventListener('click', showNext);
+                prevButton.addEventListener('click', showPrev);
+            }
+
+            // Crear los dots para el carrusel
+            const dotsContainer = document.querySelector('.carousel-dots');
+            testimonials.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = index + 1;
+                    showTestimonial(currentIndex);
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            function updateDots(index) {
+                document.querySelectorAll('.dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index % totalTestimonials);
+                });
+            }
+
+            carousel.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (currentIndex >= totalTestimonials + 1) {
+                    setCarouselPosition(1, false);
+                    currentIndex = 1;
+                } else if (currentIndex <= 0) {
+                    setCarouselPosition(totalTestimonials, false);
+                    currentIndex = totalTestimonials;
+                }
+            });
 
             // Opcional: Desplazamiento automático
             setInterval(showNext, 10000);
 
-            // Implementación de lazy loading
-            const lazyImages = document.querySelectorAll('img.lazyload');
+            // Implementación de lazy loading para el carrusel
+            const lazyImages = document.querySelectorAll('.carousel img.lazyload');
             const options = {
                 root: null,
                 rootMargin: '0px',
@@ -249,6 +330,9 @@
             }, options);
 
             lazyImages.forEach(img => imageObserver.observe(img));
+
+            // Inicializar el carrusel
+            setCarouselPosition(currentIndex, false);
         });
     </script>
 </body>

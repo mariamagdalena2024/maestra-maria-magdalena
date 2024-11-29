@@ -11,12 +11,11 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f0f8e2, #d2f7d9); /* Fondo verde manzana suave */
+    background: linear-gradient(to bottom, #f0f8e2, #d2f7d9);
     color: #333;
     line-height: 1.6;
 }
 
-/* Header */
 header {
     background: url('../assets/ocultismo.jpg') no-repeat center center;
     background-size: cover;
@@ -63,65 +62,70 @@ header .subtitle {
 /* Mejora del estilo para la advertencia de edad con efecto de palpitación */
 @keyframes pulsate {
     0% {
-      transform: scale(1);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     50% {
-      transform: scale(1.05);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
     }
+
     100% {
-      transform: scale(1);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-  }
-  
-  .age-warning {
-      background-color: #ff4136; /* Rojo intenso */
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 1000;
-      animation: pulsate 2s ease-in-out infinite;
-  }
-  
-  .age-warning p {
-      margin: 0 0 15px 0;
-  }
-  
-  .close-btn {
-      background-color: white;
-      color: #ff4136;
-      border: none;
-      padding: 10px 25px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .close-btn:hover {
-      background-color: #f8f8f8;
-      transform: translateY(-2px);
-  }
-  
-  /* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
-  @media (prefers-reduced-motion: reduce) {
+}
+
+.age-warning {
+    background-color: #ff4136;
+    /* Rojo intenso */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    animation: pulsate 2s ease-in-out infinite;
+}
+
+.age-warning p {
+    margin: 0 0 15px 0;
+}
+
+.close-btn {
+    background-color: white;
+    color: #ff4136;
+    border: none;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-2px);
+}
+
+/* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
     .age-warning {
-      animation: none;
+        animation: none;
     }
-  }
+}
 
 h3 {
-    padding-top: 20px;  /* Espacio dentro, arriba */
-    padding-bottom: 20px;  /* Espacio dentro, abajo */
+    padding-top: 20px;
+    /* Espacio dentro, arriba */
+    padding-bottom: 20px;
+    /* Espacio dentro, abajo */
 }
 
 /* Secciones principales */
@@ -141,7 +145,9 @@ section h2 {
     color: #b8860b;
 }
 
-.intro p, .services p, .contact p {
+.intro p,
+.services p,
+.contact p {
     font-size: 1.1em;
     text-align: center;
     margin-bottom: 20px;
@@ -149,7 +155,8 @@ section h2 {
 }
 
 .legend {
-    background-color: #d2f7d9; /* Verde manzana suave */
+    background-color: #d2f7d9;
+    /* Verde manzana suave */
     border-left: 4px solid #ffd700;
     padding: 20px;
     margin-top: 30px;
@@ -165,7 +172,8 @@ section h2 {
 }
 
 .service-card {
-    background: #d2f7d9; /* Fondo verde manzana suave */
+    background: #d2f7d9;
+    /* Fondo verde manzana suave */
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -198,12 +206,21 @@ section h2 {
 }
 
 /* Testimonios */
-/* Testimonios */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #e5ddd5;
+    /* Color de fondo similar a WhatsApp */
+}
+
 .carousel-container {
     position: relative;
-    max-width: 800px; /* Limit the maximum width on larger screens */
-    margin: 0 auto; /* Center the carousel */
+    max-width: 400px;
+    margin: 0 auto;
     overflow: hidden;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
 }
 
 .carousel {
@@ -213,29 +230,62 @@ section h2 {
 
 .testimonial {
     flex: 0 0 100%;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.testimonial-img {
+.message-bubble {
+    background-color: #dcf8c6;
+    border-radius: 7.5px;
+    padding: 3px;
     max-width: 100%;
-    height: auto;
-    max-height: 400px; /* Limit the height of images */
-    object-fit: contain; /* Ensure the entire image is visible */
+    position: relative;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, .13);
+}
+
+.message-bubble::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #dcf8c6;
+    border-left: 8px solid transparent;
+}
+
+.testimonial-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: #128C7E;
     border: none;
-    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2em;
     cursor: pointer;
-    z-index: 10; /* Ensure buttons are above images */
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+.carousel-button:hover {
+    background: #128C7E;
+    color: #fff;
 }
 
 .carousel-button.prev {
@@ -244,6 +294,26 @@ section h2 {
 
 .carousel-button.next {
     right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #b3b3b3;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: #128C7E;
 }
 
 /* Botón de WhatsApp */
@@ -319,6 +389,7 @@ footer p {
 .lazyloading {
     opacity: 0;
 }
+
 .lazyloaded {
     opacity: 1;
     transition: opacity 300ms;
@@ -346,24 +417,35 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .free-consultation.whatsapp-link {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    .free-consultation.whatsapp-link .icon-tabler-bell-ringing,
+    .free-consultation.whatsapp-link .whatsapp-icon {
+        width: 20px;
+        height: 20px;
+    }
+
     .carousel-container {
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .testimonial-img {
-        max-height: 300px; /* Slightly smaller max-height for mobile */
+        max-height: 300px;
     }
 }
 
 /* Estilos específicos para iPhones */
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
+@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) {
     header {
-        background-size: auto 100%; /* Ajusta el tamaño de la imagen para que cubra el alto del header */
-        background-position: center top; /* Mantiene la imagen centrada horizontalmente y alineada arriba verticalmente */
-        background-attachment: scroll; /* Cambia a scroll para evitar problemas en iOS */
+        background-size: auto 100%;
+        /* Ajusta el tamaño de la imagen para que cubra el alto del header */
+        background-position: center top;
+        /* Mantiene la imagen centrada horizontalmente y alineada arriba verticalmente */
+        background-attachment: scroll;
+        /* Cambia a scroll para evitar problemas en iOS */
     }
 }
 
@@ -384,38 +466,111 @@ and (-webkit-device-pixel-ratio : 3) {
 
 /* Estilos para la sección de consulta gratis */
 @keyframes ring {
-    0% { transform: rotate(0); }
-    1% { transform: rotate(30deg); }
-    3% { transform: rotate(-28deg); }
-    5% { transform: rotate(34deg); }
-    7% { transform: rotate(-32deg); }
-    9% { transform: rotate(30deg); }
-    11% { transform: rotate(-28deg); }
-    13% { transform: rotate(26deg); }
-    15% { transform: rotate(-24deg); }
-    17% { transform: rotate(22deg); }
-    19% { transform: rotate(-20deg); }
-    21% { transform: rotate(18deg); }
-    23% { transform: rotate(-16deg); }
-    25% { transform: rotate(14deg); }
-    27% { transform: rotate(-12deg); }
-    29% { transform: rotate(10deg); }
-    31% { transform: rotate(-8deg); }
-    33% { transform: rotate(6deg); }
-    35% { transform: rotate(-4deg); }
-    37% { transform: rotate(2deg); }
-    39% { transform: rotate(-1deg); }
-    41% { transform: rotate(1deg); }
-    43% { transform: rotate(0); }
-    100% { transform: rotate(0); }
+    0% {
+        transform: rotate(0);
+    }
+
+    1% {
+        transform: rotate(30deg);
+    }
+
+    3% {
+        transform: rotate(-28deg);
+    }
+
+    5% {
+        transform: rotate(34deg);
+    }
+
+    7% {
+        transform: rotate(-32deg);
+    }
+
+    9% {
+        transform: rotate(30deg);
+    }
+
+    11% {
+        transform: rotate(-28deg);
+    }
+
+    13% {
+        transform: rotate(26deg);
+    }
+
+    15% {
+        transform: rotate(-24deg);
+    }
+
+    17% {
+        transform: rotate(22deg);
+    }
+
+    19% {
+        transform: rotate(-20deg);
+    }
+
+    21% {
+        transform: rotate(18deg);
+    }
+
+    23% {
+        transform: rotate(-16deg);
+    }
+
+    25% {
+        transform: rotate(14deg);
+    }
+
+    27% {
+        transform: rotate(-12deg);
+    }
+
+    29% {
+        transform: rotate(10deg);
+    }
+
+    31% {
+        transform: rotate(-8deg);
+    }
+
+    33% {
+        transform: rotate(6deg);
+    }
+
+    35% {
+        transform: rotate(-4deg);
+    }
+
+    37% {
+        transform: rotate(2deg);
+    }
+
+    39% {
+        transform: rotate(-1deg);
+    }
+
+    41% {
+        transform: rotate(1deg);
+    }
+
+    43% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
 /* Ajustes para la sección de introducción */
 .intro {
     position: relative;
-    padding-top: 80px; /* Añade espacio en la parte superior para el botón */
+    padding-top: 80px;
+    /* Añade espacio en la parte superior para el botón */
     text-align: center;
-    padding-bottom: 60px; /*mantiene el padding inferior*/
+    padding-bottom: 60px;
+    /*mantiene el padding inferior*/
 }
 
 .intro .free-consultation.whatsapp-link {
@@ -423,8 +578,10 @@ and (-webkit-device-pixel-ratio : 3) {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 20px; /* Coloca el botón en la parte superior */
-    z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+    top: 20px;
+    /* Coloca el botón en la parte superior */
+    z-index: 10;
+    /* Asegura que el botón esté por encima de otros elementos */
 }
 
 /* Estilos para el botón de consulta gratis */
@@ -463,24 +620,9 @@ and (-webkit-device-pixel-ratio : 3) {
     margin-left: 10px;
 }
 
-/* Media query para dispositivos móviles */
-@media (max-width: 768px) {
-    .free-consultation.whatsapp-link {
-        font-size: 1em;
-        padding: 12px 20px;
-    }
-    
-    .free-consultation.whatsapp-link .icon-tabler-bell-ringing,
-    .free-consultation.whatsapp-link .whatsapp-icon {
-        width: 20px;
-        height: 20px;
-    }
-}
-
 /* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
 @media (prefers-reduced-motion: reduce) {
     .free-consultation.whatsapp-link .icon-tabler-bell-ringing {
         animation: none;
     }
 }
-
