@@ -198,26 +198,52 @@ section h2 {
 }
 
 /* Testimonios */
-.testimonials {
-    background-color: #d2f7d9; /* Fondo verde manzana suave */
-    padding: 60px 20px;
-    margin-top: 50px;
-    border-radius: 10px;
+/* Testimonios */
+.carousel-container {
+    position: relative;
+    max-width: 800px; /* Limit the maximum width on larger screens */
+    margin: 0 auto; /* Center the carousel */
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .testimonial {
-    background-color: #ffffff;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .testimonial-img {
-    display: block;
-    margin: 0 auto; /* Centra la imagen */
     max-width: 100%;
     height: auto;
+    max-height: 400px; /* Limit the height of images */
+    object-fit: contain; /* Ensure the entire image is visible */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above images */
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
 }
 
 /* Botón de WhatsApp */
@@ -318,6 +344,14 @@ footer p {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    .testimonial-img {
+        max-height: 300px; /* Slightly smaller max-height for mobile */
     }
 }
 
