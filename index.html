@@ -361,9 +361,24 @@
                 showTestimonial(currentIndex);
             }
 
+            function disableButtonsTemporarily() {
+                prevButton.disabled = true;
+                nextButton.disabled = true;
+                setTimeout(() => {
+                    prevButton.disabled = false;
+                    nextButton.disabled = false;
+                }, 500); // Desactiva los botones por 500 ms
+            }
+
             if (prevButton && nextButton) {
-                nextButton.addEventListener('click', showNext);
-                prevButton.addEventListener('click', showPrev);
+                nextButton.addEventListener('click', () => {
+                    disableButtonsTemporarily();
+                    showNext();
+                });
+                prevButton.addEventListener('click', () => {
+                    disableButtonsTemporarily();
+                    showPrev();
+                });
             }
 
             // Crear los dots para el carrusel
