@@ -261,12 +261,48 @@
         <p>&copy; 2024 Maestra Maria Magdalena. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/script.js"></script>
 
     <!-- Ícono flotante de WhatsApp -->
     <a href="https://wa.me/+529994498188" class="whatsapp-floating" target="_blank">
         <img data-src="assets/icono-whatsapp.png" alt="WhatsApp" class="lazyload whatsapp-icon">
     </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Página cargada correctamente.');
+
+            // Animación suave al hacer scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Animación de aparición para las tarjetas de servicios
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.service-card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Lazy loading para imágenes
+            document.querySelectorAll('img.lazyload').forEach(img => {
+                img.setAttribute('src', img.getAttribute('data-src'));
+            });
+        });
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             console.log('Página cargada correctamente.');
