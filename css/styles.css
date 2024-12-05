@@ -116,26 +116,6 @@ header .subtitle {
     }
 }
 
-.age-warning {
-    background-color: #ff4136;
-    /* Rojo intenso */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1000;
-    animation: pulsate 2s ease-in-out infinite;
-}
-
-.age-warning p {
-    margin: 0 0 15px 0;
-}
-
 .close-btn {
     background-color: white;
     color: #ff4136;
@@ -151,13 +131,6 @@ header .subtitle {
 .close-btn:hover {
     background-color: #f8f8f8;
     transform: translateY(-2px);
-}
-
-/* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
-@media (prefers-reduced-motion: reduce) {
-    .age-warning {
-        animation: none;
-    }
 }
 
 h3 {
