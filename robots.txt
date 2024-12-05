@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://maestramagdalena.com/sitemap.xml
