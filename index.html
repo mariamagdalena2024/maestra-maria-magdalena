@@ -10,7 +10,6 @@
         content="amarres de amor, rituales espirituales, limpieza energética, retorno de pareja, protección poderosa, apertura de caminos, servicios esotéricos, María Magdalena">
     <title>María Magdalena - Servicios Esotéricos</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://www.maestramagdalena.com/">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -20,33 +19,33 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16805849083"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-16805849083');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-16805849083');
     </script>
     <!-- Event snippet for Vista de página conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-    function gtag_report_conversion(url) {
-    var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-    };
-    gtag('event', 'conversion', {
-    'send_to': 'AW-16805849083/kLoDCOvN9fIZEPvP080-',
-    'value': 1.0,
-    'currency': 'COP',
-    'event_callback': callback
-    });
-    return false;
-    }
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16805849083/kLoDCOvN9fIZEPvP080-',
+                'value': 1.0,
+                'currency': 'COP',
+                'event_callback': callback
+            });
+            return false;
+        }
     </script>
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="header-content">
             <h1>María Magdalena</h1>
             <p class="subtitle">Entra al círculo secreto de la gran maestra María Magdalena, donde el amor se ata, el
@@ -66,7 +65,7 @@
             <span>¡Consulta Hoy!</span>
         </a>
         <h2>Bienvenido a un Camino Espiritual Transformador</h2>
-        <p>Con más de 20 años de experiencia y más de 6,000 casos exitosos, ofrecemos soluciones espirituales que
+        <p>Con más de 20 años de experiencia, ofrecemos soluciones espirituales que
             transforman tu vida, fortalecen tus relaciones y desbloquean tu camino hacia la prosperidad.<br>
             Especialistas en amarres, retornos, armonización de relaciones, lectura de cartas y desbloqueo energético,
             te ayudamos a sanar, encontrar claridad y alcanzar la paz interior que mereces.</p>
@@ -253,25 +252,22 @@
             <span>¡Consulta Hoy!</span>
             <img src="assets/icono-whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
         </a>
-
-
-        <h3>Política de privacidad</h3>
-        <p>Este sitio web está diseñado exclusivamente para mayores de edad y tiene como finalidad proporcionar
-            contenido de entretenimiento para adultos. La información presentada en este sitio no debe considerarse un
-            reemplazo de la atención médica, psicológica o asesoramiento legal profesional. Al acceder a esta página,
-            confirmas que tienes la edad legal para hacerlo y comprendes las condiciones de uso y advertencias aquí
-            descritas.</p>
     </section>
-
 
     <footer>
         <p>&copy; 2024 Maestra Maria Magdalena. Todos los derechos reservados.</p>
+        <p>Los resultados pueden variar.</p>
+        <p><a href="politica-de-privacidad.html">Política de Privacidad</a></p>
     </footer>
-
 
     <!-- Ícono flotante de WhatsApp -->
     <a href="https://wa.me/+529994498188" class="whatsapp-floating" target="_blank">
         <img data-src="assets/icono-whatsapp.png" alt="WhatsApp" class="lazyload whatsapp-icon">
+    </a>
+
+    <!-- Botón flotante para regresar al inicio -->
+    <a href="#header" class="back-to-top-floating">
+        <img data-src="assets/icono-flecha.png" alt="Inicio" class="lazyload back-to-top-icon">
     </a>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -433,6 +429,15 @@
 
             // Inicializar el carrusel
             setCarouselPosition(currentIndex, false);
+        });
+    </script>
+    <script>
+        document.querySelector('.back-to-top-floating').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>

@@ -61,21 +61,26 @@ header .subtitle {
 
 /* Contenedor principal del logo */
 .logo {
-    background-color: #fff8e1; 
+    background-color: #fff8e1;
     padding: 10px 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     border: 2px solid #b8860b;
     display: flex;
-    justify-content: center; /* Alineación horizontal */
-    align-items: center; /* Alineación vertical */
-    margin-bottom: 20px; /* Espaciado hacia la sección intro */
+    justify-content: center;
+    /* Alineación horizontal */
+    align-items: center;
+    /* Alineación vertical */
+    margin-bottom: 20px;
+    /* Espaciado hacia la sección intro */
 }
 
 /* Alinear elementos dentro del logo (texto e imagen) */
 .logo-container {
     display: flex;
-    align-items: center; /* Centra verticalmente el texto y la imagen */
-    gap: 10px; /* Espacio entre el texto y la imagen */
+    align-items: center;
+    /* Centra verticalmente el texto y la imagen */
+    gap: 10px;
+    /* Espacio entre el texto y la imagen */
     text-align: center;
 }
 
@@ -85,17 +90,23 @@ header .subtitle {
     font-weight: 700;
     color: #b8860b;
     text-transform: uppercase;
-    line-height: 1; /* Mantiene alineación vertical con la imagen */
+    line-height: 1;
+    /* Mantiene alineación vertical con la imagen */
 }
 
 /* Estilo de la imagen del logo */
 .logo-image {
-    width: 60px; /* Tamaño de la imagen */
+    width: 60px;
+    /* Tamaño de la imagen */
     height: 60px;
-    border-radius: 50%; /* Imagen redondeada */
-    object-fit: cover; /* Mantiene proporción de la imagen */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra decorativa */
-    border: 2px solid #b8860b; /* Borde decorativo */
+    border-radius: 50%;
+    /* Imagen redondeada */
+    object-fit: cover;
+    /* Mantiene proporción de la imagen */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra decorativa */
+    border: 2px solid #b8860b;
+    /* Borde decorativo */
 }
 
 /* Mejora del estilo para la advertencia de edad con efecto de palpitación */
@@ -116,6 +127,26 @@ header .subtitle {
     }
 }
 
+.age-warning {
+    background-color: #ff4136;
+    /* Rojo intenso */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    animation: pulsate 2s ease-in-out infinite;
+}
+
+.age-warning p {
+    margin: 0 0 15px 0;
+}
+
 .close-btn {
     background-color: white;
     color: #ff4136;
@@ -131,6 +162,13 @@ header .subtitle {
 .close-btn:hover {
     background-color: #f8f8f8;
     transform: translateY(-2px);
+}
+
+/* Aseguramos que la animación se detenga para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .age-warning {
+        animation: none;
+    }
 }
 
 h3 {
@@ -366,6 +404,26 @@ section h2 {
     height: 60px;
 }
 
+.back-to-top-floating {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top-floating:hover {
+    transform: scale(1.1);
+}
+
+.back-to-top-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -380,20 +438,16 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* Espacio para anuncios */
-.ad-space {
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin: 20px auto;
-    text-align: center;
-    border: 1px solid #ddd;
-    max-width: 1200px;
-    border-radius: 10px;
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.ad-placeholder {
-    color: #888;
-    font-style: italic;
+footer a:hover {
+    color: #9ddaf7;
+    text-shadow: 0 0 5px #03a9f4;
 }
 
 /* Lazy loading de imágenes */
@@ -459,12 +513,6 @@ footer p {
 .contact h2 {
     color: #b8860b;
     margin-bottom: 20px;
-}
-
-.contact h3 {
-    color: #cb1212;
-    font-size: 2em;
-    margin-top: 20px;
 }
 
 .contact p {
@@ -632,7 +680,7 @@ footer p {
         font-size: 15px;
         padding: 12px 20px;
     }
-    
+
     .free-consultation.whatsapp-link .icon-tabler-bell-ringing,
     .free-consultation.whatsapp-link .whatsapp-icon {
         width: 20px;
